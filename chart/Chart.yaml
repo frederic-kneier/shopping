@@ -1,0 +1,11 @@
+apiVersion: v2
+name: shopping
+description: Service for shopping lists.
+version: 1.0.0
+appVersion: latest
+type: application
+dependencies:
+  - repository: https://charts.bitnami.com/bitnami
+    name: mongodb
+    version: 13.9.1
+    condition: mongodb.enabled

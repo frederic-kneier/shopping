@@ -1,0 +1,8 @@
+package de.solugo.shopping
+
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.context.properties.EnableConfigurationProperties
+
+@SpringBootApplication
+@EnableConfigurationProperties(ApplicationProperties::class)
+class Application

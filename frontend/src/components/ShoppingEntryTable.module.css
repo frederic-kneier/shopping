@@ -1,0 +1,14 @@
+.table {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 25%;
+    grid-template-areas: 'title' 'actions';
+}
+
+.titleColumn {
+    grid-area: title;
+}
+
+.actionColumn {
+    grid-area: title;
+}

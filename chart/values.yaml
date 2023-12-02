@@ -1,0 +1,26 @@
+replicaCount: 1
+
+resources:
+  requests:
+    cpu: 250m
+    memory: 250Mi
+  limits:
+    cpu: 500m
+    memory: 500Mi
+
+image:
+  repository: 'ghcr.io/frederic-kneier/shopping'
+
+service:
+  port: 80
+
+ingress:
+  enabled: false
+  
+metrics:
+  enabled: false
+
+mongodb:
+  enabled: false
+  image:
+    tag: 4.2.21

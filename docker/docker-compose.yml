@@ -1,0 +1,9 @@
+services:
+  mongo:
+    image: "mongo:4.4.26"
+    ports:
+      - 27017:27017
+  security:
+    image: "ghcr.io/navikt/mock-oauth2-server:2.0.0"
+    ports:
+      - 9100:8080
