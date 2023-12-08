@@ -8,6 +8,7 @@ data class ApplicationProperties(
     val mongo: Mongo = Mongo(),
     val rest: Rest = Rest(),
 ) {
+
     data class Security(
         val issuerUri: String = "http://localhost:9100/auth",
         val publicClientId: String = "public",

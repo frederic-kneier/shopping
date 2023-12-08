@@ -7,10 +7,12 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/api")
-class ConfigController {
+class ConfigController(
+    private val properties: ApplicationProperties,
+) {
 
     @GetMapping("/config")
-    fun get(properties: ApplicationProperties) = Config(
+    fun get() = Config(
         issuerUri = properties.security.issuerUri,
         publicClientId = properties.security.publicClientId,
     )

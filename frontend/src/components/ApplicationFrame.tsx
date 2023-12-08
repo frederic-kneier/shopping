@@ -1,6 +1,6 @@
 import {useAuth} from "oidc-react";
 import {useNavigate} from "react-router-dom";
-import Classes from "./App.module.css";
+import Classes from "./ApplicationFrame.module.css";
 import {AppBar, IconButton, Toolbar, Tooltip, Typography} from "@mui/material";
 import ListsIcon from "../icons/ListsIcon.tsx";
 import LogoutIcon from "../icons/LogoutIcon.tsx";
@@ -21,7 +21,7 @@ export default function ApplicationFrame(props: PropsWithChildren) {
                         <ListsIcon/>
                     </IconButton>
                     <Typography variant="h6" sx={{flexGrow: 1}}>
-                        Tasks
+                        Shopping Lists
                     </Typography>
                     {auth.userData ? (
                         <Tooltip color="inherit" title={`Logout (${profile?.given_name ?? profile?.sub})`}>

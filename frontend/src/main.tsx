@@ -14,9 +14,12 @@ axios.get<Config>("/api/config").then(response => {
     const config = response.data
     const authConfig: Partial<AuthProviderProps> = {
         authority: config.issuerUri,
+        extraQueryParams: {
+            audience: window.location.origin,
+        },
+        loadUserInfo: false,
         silentRedirectUri: window.location.origin,
-        autoSignOut: true,
-        scope: 'openid,profile,email',
+        scope: 'openid profile email',
         clientId: config.publicClientId,
         redirectUri: window.location.origin,
         onSignIn: () => {

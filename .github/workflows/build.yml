@@ -87,11 +87,12 @@ jobs:
           --set ingress.domain=shopping.solugo.de \
           --set ingress.annotations."kubernetes\.io/ingress\.class"=public \
           --set ingress.annotations."cert-manager\.io/cluster-issuer"=letsencrypt \
+          --set image.pullPolicy="Always" \
           --set imagePull.credentials.registry="ghcr.io" \
           --set imagePull.credentials.username="${{ secrets.REGISTRY_PULL_USERNAME }}" \
           --set imagePull.credentials.password="${{ secrets.REGISTRY_PULL_PASSWORD }}" \
           --set mongodb.enabled=true \
           --set mongodb.auth.enabled=false \
           --set security.issuerUri=https://chronotrace.eu.auth0.com/ \
-          --set security.bublicClientId=XStfUfzVnMFOgq1vUfJFfFYKLxIqgPK0 \
+          --set security.publicClientId=XStfUfzVnMFOgq1vUfJFfFYKLxIqgPK0 \
           ;

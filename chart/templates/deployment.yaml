@@ -43,6 +43,10 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
+            - name: SERVER_PORT
+              value: "8001"
+            - name: MANAGEMENT_SERVER_PORT
+              value: "9001"
             - name: APP_SECURITY_ISSUER_URI
               value: "{{ .Values.security.issuerUri }}"
             - name: APP_SECURITY_PUBLIC_CLIENT_ID
@@ -56,7 +60,7 @@ spec:
               path: /health
               port: 9001
             periodSeconds: 10
-            failureThreshold: 5
+            failureThreshold: 10
           livenessProbe:
             httpGet:
               path: /health/liveness
